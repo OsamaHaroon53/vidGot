@@ -1,2 +1,2 @@
 # vidGot
-video get, update, delete and add.
+Ideas for courses video get, update, delete and add API.
