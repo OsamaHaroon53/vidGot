@@ -1,9 +1,11 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-require('./connection');
 
 const app = express();
 const port = 3000;
+
+require('./connection');
+require('./models/CourseIdea');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
