@@ -1,4 +1,6 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
 const courseIdea = new Schema({
     course_name: {
         type: String,
@@ -17,3 +19,5 @@ const courseIdea = new Schema({
         default: Date.now
     }
 });
+
+mongoose.model('CourseIdea',courseIdea);
