@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const courseIdea = new Schema({
-    course_name: {
+    CourseName: {
         type: String,
         required: true
     },
-    description: {
+    Description: {
         type: String,
         required: true
     },
@@ -20,4 +20,4 @@ const courseIdea = new Schema({
     }
 });
 
-mongoose.model('CourseIdea',courseIdea);
+module.exports = mongoose.model('CourseIdea',courseIdea);

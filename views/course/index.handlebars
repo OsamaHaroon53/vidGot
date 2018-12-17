@@ -1,0 +1,17 @@
+{{#each data}}
+<div class="card card-body">
+    <h3>{{CourseName}}</h3>
+    <p>{{Description}}</p>
+    <p>{{Reason}}</p>
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <a href="/course/edit/{{id}}" class="btn btn-dark btn-block">Edit</a>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <a href="#" class="btn btn-dark btn-block">Delete</a>
+        </div>
+    </div>
+</div>
+{{else}}
+<p>No Course Ideas</p>
+{{/each}}
