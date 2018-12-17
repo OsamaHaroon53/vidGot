@@ -1,1 +1,23 @@
-<h4>Edit Course Suggestion</h4>
+{{#each errors}}
+    <div class="alert alert-danger">{{text}}</div>
+{{/each}}
+<div class="card card-body">
+    <h3>Edit Course Suggestion</h3>
+    <form action="/course?_method=PUT" method="POST">
+        <input type="hidden" name="_id" value="{{course._id}}">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label for="name">Course Name</label>
+            <input type="text" name="name" value="{{course.CourseName}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" class="form-control">{{course.Description}}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="reason">Why This?</label>
+            <textarea name="reason" class="form-control">{{course.Reason}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>
