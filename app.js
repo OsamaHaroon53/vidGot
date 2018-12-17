@@ -129,6 +129,16 @@ app.put('/course', (req, res) => {
     }
 });
 
+app.delete('/course/:id',(req,res)=>{
+    course.findByIdAndDelete(req.params.id)
+        .then(done=>{
+            res.redirect('/course');
+        })
+        .catch(err=>{
+            console.log(err);
+        });
+});
+
 app.listen(port, () => {
     console.log(`App listen on port ${port}`);
 });
