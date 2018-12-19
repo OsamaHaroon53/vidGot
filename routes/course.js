@@ -57,9 +57,11 @@ router.post('/', (req, res) => {
         new course(data)
             .save()
             .then(course => {
+                req.flash('success_msg','Course suggestion Added!')
                 res.redirect('/course');
             })
             .catch(err => {
+                req.flash('error','Server Error: Not add course suggestion')
                 console.log(err);
             });
     }
@@ -95,10 +97,12 @@ router.put('/', (req, res) => {
                 newCourse.Reason = req.body.reason;
                 newCourse.save()
                     .then(course => {
+                        req.flash('success_msg','Updated course suggestion')
                         res.redirect('/course');
                     });
             })
             .catch(err => {
+                req.flash('error','Server Error: Not update course suggestion')
                 console.log(err);
             });
     }
@@ -107,9 +111,11 @@ router.put('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     course.findByIdAndDelete(req.params.id)
         .then(done => {
+            req.flash('success_msg','Deleted course suggestion')
             res.redirect('/course');
         })
         .catch(err => {
+            req.flash('error','Server Error: Not delete course suggestion')
             console.log(err);
         });
 });
